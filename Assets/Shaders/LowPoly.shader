@@ -1,3 +1,6 @@
+// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+// Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
+
 
 Shader "LowPoly"
 {
@@ -74,8 +77,8 @@ Shader "LowPoly"
 					float3 centerPos = (v0 + v1 + v2) / 3.0;
 					float3 vn = normalize(cross(v1 - v0, v2 - v0));
 
-					float4x4 modelMatrix = _Object2World;
-					float4x4 modelMatrixInverse = _World2Object;
+					float4x4 modelMatrix = unity_ObjectToWorld;
+					float4x4 modelMatrixInverse = unity_WorldToObject;
 
 					float3 normalDirection = normalize(mul(float4(vn, 0.0), modelMatrixInverse).xyz);
 					float3 viewDirection = normalize(_WorldSpaceCameraPos - mul(modelMatrix, float4(centerPos, 0.0)).xyz);
