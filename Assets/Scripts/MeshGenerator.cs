@@ -220,12 +220,16 @@ public class MeshData
         mesh.vertices = vertices;
         mesh.triangles = triangles;
         mesh.uv = uvs;
+<<<<<<< HEAD
 
         if (useFlatShading)
             mesh.RecalculateNormals();
         else
             mesh.normals = bakedNormals;
 
+=======
+        mesh.RecalculateNormals();
+>>>>>>> origin/master
         return mesh;
     }
 }

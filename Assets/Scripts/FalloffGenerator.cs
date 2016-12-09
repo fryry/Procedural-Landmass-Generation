@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,14 @@ using UnityEngine;
 public static class FalloffGenerator
 {
     public static float[,] GenerateFalloffmap(int size)
+=======
+﻿using UnityEngine;
+using System.Collections;
+
+public static class FalloffGenerator
+{
+    public static float[,] GenerateFalloff(int size)
+>>>>>>> origin/master
     {
         float[,] map = new float[size, size];
 

@@ -80,7 +80,11 @@ public class EndlessTerrain : MonoBehaviour
 
         LODInfo[] detailLevels;
         LODMesh[] lodMeshes;
+<<<<<<< HEAD
         LODMesh collisionLodMesh;
+=======
+        LODMesh collisionLODMesh;
+>>>>>>> origin/master
         MapData mapData;
         bool mapDataReceived;
         int prevLODIndex = -1;
@@ -107,9 +111,16 @@ public class EndlessTerrain : MonoBehaviour
             for (int i = 0; i < detailLevels.Length; i++)
             {
                 lodMeshes[i] = new LODMesh(detailLevels[i].lod, UpdateTerrainChunk);
+<<<<<<< HEAD
                 if (detailLevels[i].useForCollider)
                 {
                     collisionLodMesh = lodMeshes[i];
+=======
+
+                if (detailLevels[i].useForCollider)
+                {
+                    collisionLODMesh = lodMeshes[i];
+>>>>>>> origin/master
                 }
             }
 
@@ -160,6 +171,7 @@ public class EndlessTerrain : MonoBehaviour
 
                     if (lodIndex == 0)
                     {
+<<<<<<< HEAD
                         if (collisionLodMesh.hasMesh)
                         {
                             meshCollider.sharedMesh = collisionLodMesh.mesh;
@@ -167,6 +179,15 @@ public class EndlessTerrain : MonoBehaviour
                         else if (!collisionLodMesh.hasRequestedMesh)
                         {
                             collisionLodMesh.RequestMesh(mapData);
+=======
+                        if (collisionLODMesh.hasMesh)
+                        {
+                            meshCollider.sharedMesh = collisionLODMesh.mesh;
+                        }
+                        else if (!collisionLODMesh.hasRequestedMesh)
+                        {
+                            collisionLODMesh.RequestMesh(mapData);
+>>>>>>> origin/master
                         }
                     }
 
